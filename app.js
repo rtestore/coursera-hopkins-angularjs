@@ -1,14 +1,14 @@
 (function () {
- 'use strict';
+    'use strict';
 
- angular.module('LunchCheck', [])
- .controller('LunchCheckController', LunchCheckController);
+    angular.module('LunchCheck', [])
+        .controller('LunchCheckController', LunchCheckController);
 
     LunchCheckController.$inject = ['$scope'];
 
     function LunchCheckController($scope) {
 
-      $scope.countMeals =  function () {
+        $scope.countMeals =  function () {
             var numMeals = 0;
             var text = "";
             var num_of_meals = CalculateAmountMeals($scope.lunch_menu_model);
@@ -31,9 +31,9 @@
                 text = "Too Much!";
                 $scope.message_color = 'green';
                 $scope.border_color = 'green';
-            };
+            }
 
-              $scope.message = text;
+          $scope.message = text;
 
           };
 
@@ -54,7 +54,6 @@
                      numOfMeals += 1;
                }
              };
-            alert(numOfMeals);
             return numOfMeals;
           };
 
