@@ -49,10 +49,12 @@
                var arrayCount = arrayOfMeals.length;
                var i = 0;
                for (i = 0; i < arrayCount; i++) {
-                   if (arrayOfMeals[i] != '' && arrayOfMeals[i]!= ' ' )
+                   var str = arrayOfMeals[i].trim();
+                   if (str.length > 0) 
                      numOfMeals += 1;
                }
              };
+            alert(numOfMeals);
             return numOfMeals;
           };
 
