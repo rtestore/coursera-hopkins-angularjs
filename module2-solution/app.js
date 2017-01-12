@@ -10,10 +10,10 @@
     AlreadyBoughtController.$inject = ['$scope', 'ShoppingListCheckOffService'];
     
 
-function ToBuyController(ShoppingListCheckOffService) {
+function ToBuyController($scope, ShoppingListCheckOffService) {
   var list1 = this;
     
-  list1.items = ShoppingListCheckOffService.getItems(1);
+  list1 = ShoppingListCheckOffService.getItems(1);
     
   $scope.list1 = list1;    
 
@@ -25,13 +25,14 @@ function ToBuyController(ShoppingListCheckOffService) {
   };
 }
 
-function AlreadyBoughtController(ShoppingListCheckOffService) {
+function AlreadyBoughtController($scope, ShoppingListCheckOffService) {
     
   var list2 = this;
     
+  list2 = ShoppingListCheckOffService.getItems(2);
+    
   $scope.list2 = list2;
-
-  list2.items = ShoppingListCheckOffService.getItems(2);
+        console.log(list2)
 
   list2.itemName = "";
   list2.itemQuantity = "";
@@ -76,7 +77,7 @@ function ShoppingListCheckOffService() {
   };
 
   service.removeItem = function (itemIndex) {
-    var obj = items[itemIndex]; 
+    var obj = list1[itemIndex]; 
     list1.splice(itemIndex, 1);
     service.addItem(obj.name, obj.quantity);  
   };
