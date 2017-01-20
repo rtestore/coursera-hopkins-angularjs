@@ -38,7 +38,6 @@ function NarrowItDownController($scope, MenuSearchService) {
     var searchTerm = $scope.search_term;
     var promise = MenuSearchService.getMatchedMenuItems(searchTerm);
     promise.then(function (response) {
-      console.log('la respuesta recibida por el controller es : ' , response.filteredItems , 'cantidad:' , response.filteredItems.length );
       list.filteredItems = response.filteredItems;
     })
     .catch(function (error) {
@@ -67,7 +66,7 @@ function MenuSearchService($http, ApiBasePath) {
    .then (function (response) { 
       foundItems = response.data;
       var menu_items = foundItems.menu_items;
-      console.log('todos los items: ', menu_items.lenght, menu_items);   
+      filteredItems = [];   
 
       var i = 0;   
       for (i=0; i<menu_items.length; i++) {
@@ -76,7 +75,7 @@ function MenuSearchService($http, ApiBasePath) {
              filteredItems.push(elem);  
           }
       }   
-      console.log('filteredItems: ' , filteredItems) 
+      
       response.filteredItems = filteredItems;
       return response ;
 

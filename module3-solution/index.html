@@ -24,12 +24,11 @@
     <br><br>
 
     <found-items
-        ng-if="list.fiteredItems.lenght>0"
         items="list.filteredItems"
         on-remove="list.removeItem(index)">
     </found-items>
-    <div ng-if="list.fiteredItems.lenght == 0"> <h3 class="warning">NOTHING FOUND !</h3>
-    </div>
+    <h3 ng-if="list.filteredItems.length == 0"  class="warning">NOTHING FOUND !</h3>
+    
    
     </div>
 
