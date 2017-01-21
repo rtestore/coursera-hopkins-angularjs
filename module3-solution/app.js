@@ -67,13 +67,21 @@ function MenuSearchService($http, ApiBasePath) {
       foundItems = response.data;
       var menu_items = foundItems.menu_items;
       filteredItems = [];   
+      
+      var searchTerm_len = 0        
+      if (searchTerm != null) {
+         var str = searchTerm.trim();
+         searchTerm_len = str.length;
+     }
 
-      var i = 0;   
-      for (i=0; i<menu_items.length; i++) {
-          var elem = menu_items[i];
-          if (elem.description.indexOf(searchTerm) != -1 ) {
-             filteredItems.push(elem);  
-          }
+      if (searchTerm_len > 0) {
+              var i = 0;   
+              for (i=0; i<menu_items.length; i++) {
+                  var elem = menu_items[i];
+                  if (elem.description.indexOf(searchTerm) != -1 ) {
+                     filteredItems.push(elem);  
+                  }
+               }
       }   
       
       response.filteredItems = filteredItems;
