@@ -1,0 +1,21 @@
+<div>Item name: {{ itemDetail.name }}</div>
+<div>Item quantity: {{ itemDetail.quantity }}</div>
+<div>Item description: {{ itemDetail.description }}</div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Short Name</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price Large</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat ng-repeat="dish in itemDetail.dish">
+         <td>{{ dish.short_name }}</td>
+         <td>{{ dish.name }}</td>
+         <td>{{ dish.description }}</td>
+         <td>{{ dish.price_large }}</td>
+       </tr>
+   </table>>
