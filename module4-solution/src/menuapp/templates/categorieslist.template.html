@@ -3,7 +3,7 @@
   <li ng-repeat="item in $ctrl.items"
       ui-sref="mainList.itemDetail({itemId: $index})">
 -->
- <li ng-repeat="item in $ctrl.items" ui-sref="mainList.itemDetail({itemId: $index})>
-      {{ item.name }} 
+ <li ng-repeat="item in $ctrl.items">
+      <a href="/mainList.itemDetail/{{item.short_name}}">{{ item.name }}</a> 
  </li>
 </ul>
