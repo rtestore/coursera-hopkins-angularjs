@@ -38,8 +38,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     controller: 'ItemsController as dishes',
     resolve: {
       meal: ['$stateParams', 'MenuDataService', function ($stateParams, MenuDataService) {
-                  console.log('en routes, param; ',$stateParams.categoryShortName ) ;
-        console.log('en routes; ',MenuDataService.getItemsForCategory($stateParams.categoryShortName) ) ; 
         return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
       }]
     }

@@ -8,11 +8,7 @@ angular.module('MenuApp')
 ItemsController.$inject = ['$stateParams', 'meal'];
 function ItemsController($stateParams, meal) {
   var dishes = this;
-  dishes.meal = meal;  
-    
-  console.log('dishes.meal: ', dishes.meal);
-
-    
+  dishes.meal = meal;      
 }
 
 })();

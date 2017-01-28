@@ -17,7 +17,6 @@ function MenuDataService($http, ApiBasePath, ApiBasePath2) {
       url: (ApiBasePath)
     })
    .then (function (response) { 
-      console.log('entro a getAllCategories');
       return response.data; 
 
    })
@@ -36,8 +35,6 @@ function MenuDataService($http, ApiBasePath, ApiBasePath2) {
       url: (ApiBasePath2+categoryShortName)
     })
    .then (function (response) { 
-      console.log('entro a getItemsForCategory');
-             console.log('datos de items:' , response.data);
       return response.data ;
 
    })
