@@ -14,39 +14,40 @@ function MenuDataService($http, ApiBasePath, ApiBasePath2) {
 
     var response_call = $http({
       method: "GET",
-      url: (ApiBasePath),
+      url: (ApiBasePath)
     })
    .then (function (response) { 
-
-      return response.data ;
+      console.log('entro a getAllCategories');
+      return response.data; 
 
    })
    .catch (function (error) {
       console.log('Error: ', error);
-   });
+   })
       
    return response_call;
          
   };
   
-/*  service.getItemsForCategory() = function(categoryShortName) {
+  service.getItemsForCategory = function(categoryShortName) {
      
     var response_call = $http({
       method: "GET",
-      url: (ApiBasePath2+categoryShortName),
+      url: (ApiBasePath2+categoryShortName)
     })
    .then (function (response) { 
-
+      console.log('entro a getItemsForCategory');
+             console.log('datos de items:' , response.data);
       return response.data ;
 
    })
    .catch (function (error) {
-      console.log('Error: ', error);
-   });
+      console.log('Error: ', error)
+   })
       
    return response_call;
       
-  };*/
+  };
 
  } 
 
