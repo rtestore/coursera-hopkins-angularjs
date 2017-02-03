@@ -1,0 +1,30 @@
+<div class="container">
+ <fieldset>
+     <legend>Sign Up</legend>
+     <form name='signUpForm' novalidate>
+     <input type="text" name="first_name" placeholder="Enter your First Name"
+             ng-model="menuSignUpCtrl.user.first_name"
+             required
+             minlength="4"
+             ng-maxlength="20">
+            <span 
+               ng-if="(signUpForm.first_name.$error.minlength || 
+                       signUpForm.first_name.$error.required) && signUpForm.first_name.$touched">
+               First Name must be at least 4 characters long
+            </span>
+            <span 
+               ng-if="(signUpForm.first_name.$error.maxlength &&
+                        signUpForm.first_name.$touched">
+               First Name must not be longer than 20 characters
+            </span>
+            <br>
+     
+
+     
+     
+     </form>
+    
+ </fieldset>
+
+
+</div>
