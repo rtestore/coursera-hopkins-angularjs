@@ -1,4 +1,6 @@
-  <table class="table table-striped">
+  <a ui-sref="home">Home</a> &lt; <a ui-sref="categories">Categories</a> &lt; <span>Item</span>
+
+   <table class="table table-striped">
     <thead>
       <tr>
         <th>Short Name</th>
@@ -8,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat ng-repeat="dish in itemDetail.dish">
+      <tr ng-repeat="dish in dishes.meal.menu_items">
          <td>{{ dish.short_name }}</td>
          <td>{{ dish.name }}</td>
          <td>{{ dish.description }}</td>

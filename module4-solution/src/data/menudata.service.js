@@ -14,39 +14,37 @@ function MenuDataService($http, ApiBasePath, ApiBasePath2) {
 
     var response_call = $http({
       method: "GET",
-      url: (ApiBasePath),
+      url: (ApiBasePath)
     })
    .then (function (response) { 
-
-      return response.data ;
+      return response.data; 
 
    })
    .catch (function (error) {
       console.log('Error: ', error);
-   });
+   })
       
    return response_call;
          
   };
   
-/*  service.getItemsForCategory() = function(categoryShortName) {
+  service.getItemsForCategory = function(categoryShortName) {
      
     var response_call = $http({
       method: "GET",
-      url: (ApiBasePath2+categoryShortName),
+      url: (ApiBasePath2+categoryShortName)
     })
    .then (function (response) { 
-
       return response.data ;
 
    })
    .catch (function (error) {
-      console.log('Error: ', error);
-   });
+      console.log('Error: ', error)
+   })
       
    return response_call;
       
-  };*/
+  };
 
  } 
 
