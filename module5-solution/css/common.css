@@ -18,3 +18,10 @@
 .ui-view-placeholder {
     margin-top: 60px;
 }
+
+.form-control {
+	width: 300px;
+	background-color: white;
+	color: black;
+}
+
