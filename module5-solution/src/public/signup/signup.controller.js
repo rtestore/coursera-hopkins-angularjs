@@ -4,25 +4,26 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-//SignUpController.$inject = ['menuItem'];
 function SignUpController() {
   var $ctrl = this;
-
+  $ctrl.valid_item = false; 
+	
+	
+	
+  SignUpController.$inject = ['MenuDataService', MenuDataService];	
+  $ctrl.validateItemMenu = function(item) {
+	  var promise = MenuDataService.validateItemMenu(item);
+      promise.then(function (response) {
+		  console.log('en controller:', response);
+	  return response;
+      });
+	  };
+	
   $ctrl.submit = function() {
         $ctrl.form_completed = true;
-        console.log('entra al submit');
+	    var item_valid = validateItemMenu($ctrl.user.menu_number); 
   };
 
-//  $ctrl.menuItem = menuItem;
-	
-/*	var $ctrl.user = {};
-	var user = $ctrl.user;
-	user.first_name = ""; 
-	user.last_name = "";
-	user.email = "";
-	user.phone = "";
-	user.menu_number = "";*/
-	
-}
 
+}
 })();

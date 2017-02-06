@@ -66,7 +66,8 @@
          <div class="form-group">
              <input type="text" name="menu_number" placeholder="Enter your favorite menu number" class="form-control"
                      ng-model="$ctrl.user.menu_number">
-                    <br>
+			         <div ng-if="$ctrl.valid_item">No such menu number exists</div>
+			         <br>
          </div>  
 
 		  <button class="btn btn-warning" 
