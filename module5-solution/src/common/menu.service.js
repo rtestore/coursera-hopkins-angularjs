@@ -30,11 +30,9 @@ function MenuService($http, ApiPath) {
   service.validateItemMenu = function(item) {
 	  return $http.get(ApiPath + '/menu_items/'+item+'.json').then(function (response) {
 		  console.log('response: ' , response);
-          return true;
-	  })
-	  .catch(function (error) {
-         return false;
-    })
+          return response;
+	  });
+
   }
 
 }
