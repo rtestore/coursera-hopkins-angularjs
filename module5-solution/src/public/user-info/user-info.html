@@ -1,0 +1,42 @@
+<div class="container" ng-show="userInfo.user_info.user_registered">
+        <div class="row">
+          <div class="col-sm-4">First Name:</div>
+          <div class="col-sm-8">{{userInfo.user_info.first_name}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">Last  Name:</div>
+          <div class="col-sm-8">{{userInfo.user_info.last_name}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">Email:</div>
+          <div class="col-sm-8">{{userInfo.user_info.email}}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">Phone:</div>
+          <div class="col-sm-8">{{userInfo.user_info.phone}}</div>
+        </div>
+    
+         <div class="row">
+          <div class="col-sm-4">Favorite dish title:</div>
+          <div class="col-sm-8">{{userInfo.user_info.item_preferred.name}}</div>
+        </div>
+    
+        <div class="row">
+          <div class="col-sm-4">Favorite dish description:</div>
+          <div class="col-sm-8">{{userInfo.user_info.description}}</div>
+        </div>
+    
+        <div class="row">
+          <div class="col-sm-4">Favorite dish image:</div>
+          <div class="col-sm-8"></div>
+        </div>
+</div>
+
+<div class="container" ng-hide="userInfo.user_info.user_registered">
+   <label>Not Signed Up Yet.</label><a ui-sref="public.signup">
+                                Sign up Now! </a>
+</div>
+

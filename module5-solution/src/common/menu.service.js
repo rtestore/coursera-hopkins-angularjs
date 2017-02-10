@@ -8,6 +8,7 @@ angular.module('common')
 MenuService.$inject = ['$http', 'ApiPath'];
 function MenuService($http, ApiPath) {
   var service = this;
+  var user_info = {'user_registered': false};
 
   service.getCategories = function () {
     return $http.get(ApiPath + '/categories.json').then(function (response) {
@@ -34,6 +35,17 @@ function MenuService($http, ApiPath) {
 	  });
 
   }
+  
+  service.setUserInfo = function(user_information) { 
+      user_info = user_information;
+      console.log('en setUserInfo:', user_info);
+      
+  };
+    
+  service.getUserInfo = function() { 
+      return user_info;
+      
+  };
 
 }
 
