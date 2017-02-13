@@ -14,7 +14,12 @@ function SignUpController(MenuService) {
 	
 
   $ctrl.submit = function() {
-     $ctrl.form_completed = true;
+      $ctrl.form_completed = true;
+      user_info.first_name = $ctrl.user.first_name;
+      user_info.last_name = $ctrl.user.last_name;
+      user_info.email = $ctrl.user.email;
+      user_info.phone = $ctrl.user.phone;
+      user_info.user_registered = true;  
       
       var promise = MenuService.validateItemMenu($ctrl.user.menu_number);
       
@@ -27,19 +32,19 @@ function SignUpController(MenuService) {
              user_info.item_preferred = menu_item_preferred;
              var apiPath = MenuService.getApiPath();
              user_info.image_path = apiPath + 'images/' + menu_item_preferred.short_name + '.json';
+             MenuService.setUserInfo(user_info);
           }
-          else $ctrl.valid_item = false;
+          else {
+              $ctrl.valid_item = false;
+          };
           
-          user_info.first_name = $ctrl.user.first_name;
-          user_info.last_name = $ctrl.user.last_name;
-          user_info.email = $ctrl.user.email;
-          user_info.phone = $ctrl.user.phone;
-          user_info.user_registered = true;          
-          MenuService.setUserInfo(user_info);
       })
       .catch(function (error) {
         console.log(error);
           $ctrl.valid_item = false;
+          user_info.item_preferred = menu_item_preferred;
+          user_info.image_path = '';
+          MenuService.setUserInfo(user_info);
 	  });
      
       console.log('en signup controller - before setUserInfo: ', user_info);
