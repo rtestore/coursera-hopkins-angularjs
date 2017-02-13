@@ -46,6 +46,10 @@ function MenuService($http, ApiPath) {
       return user_info;
       
   };
+    
+  service.getApiPath = function() {
+	  return ApiPath;
+  };
 
 }
 
